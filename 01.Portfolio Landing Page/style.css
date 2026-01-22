@@ -15,6 +15,10 @@
   --color-subtext: #bac2de;
   --color-blue: #89b4fa;
   --color-green: #a6e3a1;
+
+  --max-width: 1500px;
+  --padding-x: 0 4rem;
+  --border-radius: 12px;
 }
 
 * {
@@ -22,10 +26,13 @@
   margin: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
+}
+
+body {
   color: var(--color-text);
 }
 
-nav {
+.nav {
   height: 75px;
 }
 
@@ -36,10 +43,10 @@ body {
 }
 
 .nav-container {
-  max-width: 1450px;
+  max-width: 1200px;
   height: 100%;
   margin: 0 auto;
-  padding: 0 4rem;
+  padding: var(--padding-x);
 
   display: flex;
   align-items: center;
@@ -66,13 +73,14 @@ body {
 .nav-links {
   display: flex;
   list-style: none;
-  gap: 3.5rem;
+  gap: 2rem;
 
   font-size: 1rem;
   font-weight: 500;
 }
 
 .nav-links a {
+  color: inherit;
   text-decoration: none;
   padding: 0.8rem;
   transition: color 0.3s ease;
@@ -106,7 +114,7 @@ body {
   border: 1.2px solid var(--color-mauve);
 }
 
-/* End of nav */
+/* Hero Section */
 
 .hero {
   padding: 4rem 0;
@@ -118,9 +126,9 @@ body {
   align-items: center;
   justify-content: space-between;
 
-  max-width: 1450px; /* why */
+  max-width: var(--max-width);
   margin: 0 auto;
-  padding: 0 4rem;
+  padding: var(--padding-x);
   gap: 4rem;
 }
 
@@ -194,5 +202,63 @@ body {
   max-width: 100%;
   height: auto;
   max-height: 500px;
-  object-fit: contain; /* whats this? */
+  object-fit: contain;
+}
+
+/* Project Section */
+
+/* .projects-container {
+  display: grid;
+  justify-items: center;
+} */
+
+.project-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+  gap: 1.6rem;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.project-box {
+  display: flex;
+  flex-direction: column;
+
+  background-color: var(--color-mantle);
+  border-radius: 12px;
+  padding: 0.8rem;
+  gap: 1rem;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.project-box:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+.project-img-box {
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.project-image {
+  height: 220px;
+  width: 100%;
+  object-fit: cover;
+  display: block;
+
+  transition: transform 0.3s ease;
+}
+
+.project-img-box:hover .project-image {
+  transform: scale(1.05);
+}
+
+.project-description p {
+  color: var(--color-text);
 }
