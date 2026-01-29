@@ -1,26 +1,23 @@
-@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
-
-/* font-family: "Poppins", sans-serif; */
-/* font-family: "Ubuntu Mono", monospace; */
-/* font-family: "JetBrains Mono", monospace; */
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 :root {
-  --color-base: #1e1e2e;
-  --color-mantle: #181825;
-  --color-crust: #11111b;
-  --color-text: #cdd6f4;
-  --color-red: #f38ba8;
-  --color-mauve: #cba6f7;
-  --color-rosewater: #f5e0dc;
-  --color-subtext: #bac2de;
+  --color-base: rgb(30, 30, 46);
+  --color-mantle: rgb(24, 24, 37);
+  --color-crust: rgb(17, 17, 27);
+  --color-text: rgb(205, 214, 244);
+  --color-red: rgb(243, 139, 168);
+  --color-mauve: rgb(203, 166, 247);
+  --color-rosewater: rgb(245, 224, 220);
+  --color-subtext: rgb(186, 194, 222);
   --color-blue: rgb(137, 180, 250);
   --color-blue-shadow: rgba(137, 180, 250, 0.45);
-  --color-green: #a6e3a1;
+  --color-green: rgb(166, 227, 161);
 
   --max-width: 1500px;
   --padding-x: 0 4rem;
   --border-radius: 12px;
-  --section-margin-bottom: 200px;
+  --section-margin-bottom: 180px;
+  --margin-centering: 0 auto;
 }
 
 * {
@@ -47,7 +44,7 @@ body {
 .nav-container {
   max-width: 1200px;
   height: 100%;
-  margin: 0 auto;
+  margin: var(--margin-centering);
   padding: var(--padding-x);
 
   display: flex;
@@ -129,7 +126,7 @@ body {
   justify-content: space-between;
 
   max-width: var(--max-width);
-  margin: 0 auto;
+  margin: var(--margin-centering);
   padding: var(--padding-x);
   gap: 5rem;
 }
@@ -208,14 +205,17 @@ body {
 
 /* Project Section */
 
+.projects {
+  margin-bottom: var(--section-margin-bottom);
+}
+
 .projects-container {
   max-width: var(--max-width);
-  margin: 0 auto;
+  margin: var(--margin-centering);
   padding: 3rem;
 
   background-color: var(--color-crust);
   border-radius: 12px;
-  margin-bottom: 180px;
 }
 
 .projects-heading-box {
@@ -243,7 +243,7 @@ body {
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 
   gap: 1.6rem;
-  margin: 0 auto;
+  margin: var(--margin-centering);
 }
 
 .project-box {
@@ -289,15 +289,18 @@ body {
 
 /* Services Section */
 
+.services {
+  margin-bottom: var(--section-margin-bottom);
+}
+
 .services-container {
   display: flex;
   align-items: center;
   justify-content: center;
 
   max-width: var(--max-width);
-  margin: 0 auto;
+  margin: var(--margin-centering);
   padding: 3rem;
-  margin-bottom: var(--section-margin-bottom);
 }
 
 .service-container {
@@ -377,6 +380,10 @@ body {
 
 /* Price Section */
 
+.price {
+  margin-bottom: var(--section-margin-bottom);
+}
+
 .price-container {
   display: flex;
   justify-content: center;
@@ -384,8 +391,7 @@ body {
   flex-direction: column;
 
   max-width: var(--max-width);
-  margin: 0 auto;
-  margin-bottom: var(--section-margin-bottom);
+  margin: var(--margin-centering);
 }
 
 .price-headings {
@@ -484,4 +490,49 @@ body {
 .price-content-two a:hover {
   color: var(--color-crust);
   background-color: var(--color-mauve);
+}
+
+/* Footer */
+
+footer {
+  margin-bottom: var(--section-margin-bottom);
+  background-color: var(--color-crust);
+}
+
+.footer-container {
+  text-align: center;
+  max-width: var(--max-width);
+  padding: 3rem;
+  margin: var(--margin-centering);
+}
+
+.footer-container h5 {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: var(--color-mauve);
+  line-height: 0.8rem;
+}
+
+.footer-container h2 {
+  font-size: 2.6rem;
+  font-weight: 500;
+  margin-bottom: 1.2rem;
+}
+
+.footer-container ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  list-style: none;
+  gap: 1rem;
+  font-size: 2.2rem;
+}
+
+.footer-container ul li {
+  cursor: pointer;
+}
+
+.footer-container ul li i {
+  color: var(--color-subtext);
 }
